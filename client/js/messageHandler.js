@@ -3,16 +3,23 @@ const email = document.getElementById('email-field');
 const message = document.getElementById('message-field');
 
 
-function sendMessage() {
+async function sendMessage() {
     let params = {
         name: name?.value,
         email: email?.value,
-        subject: 'New Contact',
         message: message?.value
     }
 
-    emailjs.send("service_rl1243l","template_piroqx8",params).then(()=>{
-        alert("sented")
+    const responce = await fetch('http://localhost:3000/mail', {
+        method: "POST",
+        mode: 'cors',
+        credentials: 'same-origin',
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(params)
     })
+
+    console.log(await responce.json());
 
 }
