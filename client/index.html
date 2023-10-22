@@ -31,14 +31,6 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 
 
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-  </script>
-  <script type="text/javascript">
-    (function () {
-      emailjs.init("sm_fC9X0j4ccEihaz");
-    })();
-  </script>
-
 </head>
 
 <body>
@@ -355,17 +347,17 @@
 
           <!--User Testimonial-->
           <div class="col-3 testimonial classic">
-            <p><input type="text" id="name-field" name="" placeholder="Name"></p>
+            <p><input onkeyup="checkBtnStatus()" type="text" id="name-field" name="" placeholder="Name"></p>
 
-            <p><input type="email" id="email-field" name="" placeholder="Email"></p>
+            <p><input onkeyup="checkBtnStatus()" type="email" id="email-field" name="" placeholder="Email"></p>
 
           </div>
           <!-- End of Testimonial-->
 
           <!--User Testimonial-->
           <div class="col-3 testimonial classic">
-            <p><textarea name="subject" placeholder="Write something.." id="message-field"></textarea></p>
-            <p><a href="#" onclick="sendMessage()" class="buttonsubmit">Submit Now</a></p>
+            <p><textarea onkeyup="checkBtnStatus()" name="subject" placeholder="Write something.." id="message-field"></textarea></p>
+            <p><a  onclick="sendMessage()" id="submit-btn" class="buttonsubmit">Submit Now</a></p>
           </div>
 
           <!-- End of Testimonial-->
